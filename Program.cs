@@ -20,19 +20,19 @@ namespace PvZ
             switch (type)
             {
                 case zombieType.noGearZombie:
-                    var newZom = (noGearZombie)factory.GetZombie(zombieType.noGearZombie);
+                    var newZom = factory.GetZombie(zombieType.noGearZombie);
                     zombieList.Add(newZom);
                     break;
                 case zombieType.roadConeZombie:
-                    var newRZom = (roadConeZombie)factory.GetZombie(zombieType.roadConeZombie);
+                    var newRZom = factory.GetZombie(zombieType.roadConeZombie);
                     zombieList.Add(newRZom);
                     break;
                 case zombieType.bucketHeadZombie:
-                    var newBZom = (bucketHeadZombie)factory.GetZombie(zombieType.bucketHeadZombie);
+                    var newBZom = factory.GetZombie(zombieType.bucketHeadZombie);
                     zombieList.Add(newBZom);
                     break;
                 case zombieType.doorZombie:
-                    var newDZom = (doorZombie)factory.GetZombie(zombieType.doorZombie);
+                    var newDZom = factory.GetZombie(zombieType.doorZombie);
                     zombieList.Add(newDZom);
                     break;
             }
