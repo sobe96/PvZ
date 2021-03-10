@@ -53,6 +53,8 @@ namespace PvZ
                 {
                     Program.inGame = true;
                     Console.Clear();
+                    Console.WriteLine("Enter damage value");
+                    zombie.DMG = Convert.ToInt32(Console.ReadLine());
                     Program.hitNext(0);
                     Program.Main();
                 }

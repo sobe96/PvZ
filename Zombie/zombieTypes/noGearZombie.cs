@@ -9,7 +9,7 @@ namespace PvZ.Zombie.zombieTypes
     {
         public static bool hasHat;
         public static bool isAlive;
-        private static int hatHP;
+        public static int hatHP;
         public static zombieType typeZ;
         public static int ZomRegHP;
 

@@ -10,9 +10,7 @@ namespace PvZ.Zombie
 {
     public abstract class zombie
     {
-        public static int HP;
-        public static int ZomHP = 50;
-        public static int DMG = 10;
+        public static int DMG = 25;
 
         public static void IsHit(zombieType type)
         {
@@ -32,7 +30,7 @@ namespace PvZ.Zombie
                     break;
             }
         }
-        public static bool switchZombie(zombieType type)
+        public static bool zombieState(zombieType type)
         {
             switch (type)
             {

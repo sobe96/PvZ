@@ -18,9 +18,9 @@ namespace PvZ.Factories
                 case zombieType.roadConeZombie:
                     return new roadConeZombie(type, true, true, 25, 50);
                 case zombieType.bucketHeadZombie:
-                    return new bucketHeadZombie(type, true, true, 50, 50);
+                    return new bucketHeadZombie(type, true, true, 100, 50);
                 case zombieType.doorZombie:
-                    return new doorZombie(type, true, true, 70, 50);
+                    return new doorZombie(type, true, true, 25, 50);
                 default:
                     throw new ArgumentException();
             }

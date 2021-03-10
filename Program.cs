@@ -47,7 +47,7 @@ namespace PvZ
                     if (i >= zombieList.Count)
                     {
                         Console.Clear();
-                        Console.WriteLine("All Zombies are dead! Congratulations!");
+                        Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
                         Console.ReadLine();
                     }
                     else
@@ -82,7 +82,7 @@ namespace PvZ
         }
         public static bool IsAlive (int k)
         {
-            bool state = zombie.switchZombie(GetZombieType(k));
+            bool state = zombie.zombieState(GetZombieType(k));
             switch (state)
             {
                 case true:
