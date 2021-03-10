@@ -1,0 +1,13 @@
+F:\C# codes\PvZ\bin\Debug\netcoreapp3.1\PvZ.exe
+F:\C# codes\PvZ\bin\Debug\netcoreapp3.1\PvZ.deps.json
+F:\C# codes\PvZ\bin\Debug\netcoreapp3.1\PvZ.runtimeconfig.json
+F:\C# codes\PvZ\bin\Debug\netcoreapp3.1\PvZ.runtimeconfig.dev.json
+F:\C# codes\PvZ\bin\Debug\netcoreapp3.1\PvZ.dll
+F:\C# codes\PvZ\bin\Debug\netcoreapp3.1\PvZ.pdb
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.csprojAssemblyReference.cache
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.AssemblyInfoInputs.cache
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.AssemblyInfo.cs
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.csproj.CoreCompileInputs.cache
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.dll
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.pdb
+F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.genruntimeconfig.cache
