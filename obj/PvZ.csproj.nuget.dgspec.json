@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\C# codes\\PvZ\\PvZ.csproj": {}
+    "C:\\Users\\same1\\Desktop\\My WSU studies\\Software Design and Architecture\\Projects\\Midterm\\PvZ\\PvZ.csproj": {}
   },
   "projects": {
-    "F:\\C# codes\\PvZ\\PvZ.csproj": {
+    "C:\\Users\\same1\\Desktop\\My WSU studies\\Software Design and Architecture\\Projects\\Midterm\\PvZ\\PvZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\C# codes\\PvZ\\PvZ.csproj",
+        "projectUniqueName": "C:\\Users\\same1\\Desktop\\My WSU studies\\Software Design and Architecture\\Projects\\Midterm\\PvZ\\PvZ.csproj",
         "projectName": "PvZ",
-        "projectPath": "F:\\C# codes\\PvZ\\PvZ.csproj",
+        "projectPath": "C:\\Users\\same1\\Desktop\\My WSU studies\\Software Design and Architecture\\Projects\\Midterm\\PvZ\\PvZ.csproj",
         "packagesPath": "C:\\Users\\same1\\.nuget\\packages\\",
-        "outputPath": "F:\\C# codes\\PvZ\\obj\\",
+        "outputPath": "C:\\Users\\same1\\Desktop\\My WSU studies\\Software Design and Architecture\\Projects\\Midterm\\PvZ\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

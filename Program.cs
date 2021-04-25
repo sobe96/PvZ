@@ -14,6 +14,7 @@ namespace PvZ
         public static zombieFactory factory = new zombieFactory();
         public static bool inGame = false;
         public static int i;
+        public static bool gameStart = true;
 
         public static void addZombie(zombieType type)
         {
@@ -41,23 +42,73 @@ namespace PvZ
         {
             while (inGame)
             {
-                ConsoleKeyInfo keyInfoConf = Console.ReadKey();
-                if (keyInfoConf.Key == ConsoleKey.Spacebar)
+                if (gameStart)
                 {
-                    if (i >= zombieList.Count)
+                    gameStart = false;
+                    var type = GetZombieType(0);
+                    Console.Clear();
+                    Console.Write(zombie.InitShow(type));
+                }
+                if (zombie.deadState)
+                {
+                    ConsoleKeyInfo keyInfoEnter = Console.ReadKey();
+                    if (keyInfoEnter.Key == ConsoleKey.Enter)
                     {
-                        Console.Clear();
-                        Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
-                        Console.ReadLine();
+                        zombie.deadState = false;
                     }
-                    else
+                }
+                else
+                {
+                    ConsoleKeyInfo keyInfoConf = Console.ReadKey();
+                    if (keyInfoConf.Key == ConsoleKey.D1)
                     {
-                        hitNext(i);
-                        if (!IsAlive(i))
+                        bool airDrop = false;
+                        if (i >= zombieList.Count)
                         {
-                            i++;
+                            Console.Clear();
+                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
+                            Console.ReadLine();
                         }
-                    } 
+                        else
+                        {
+                            hitNext(i, airDrop);
+                            if (!IsAlive(i))
+                            {
+                                i++;
+                            }
+                        }
+                    }
+                    if (keyInfoConf.Key == ConsoleKey.D2)
+                    {
+                        bool airDrop = true;
+                        if (i >= zombieList.Count)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            hitNext(i, airDrop);
+                            if (!IsAlive(i))
+                            {
+                                i++;
+                            }
+                        }
+                    }
+                    if (keyInfoConf.Key == ConsoleKey.D3)
+                    {
+                        if (i >= zombieList.Count)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            loseHatNext(i);
+                        }
+                    }
                 }
             }
             i = 0;
@@ -125,10 +176,16 @@ namespace PvZ
                     throw new ArgumentException();
             }
         }
-        public static void hitNext(int i)
+        public static void hitNext(int i, bool airDrop)
         {
             var type = GetZombieType(i);
-            zombie.IsHit(type);
+            zombie.IsHit(type, airDrop);
+        }
+
+        public static void loseHatNext(int i)
+        {
+            var type = GetZombieType(i);
+            zombie.isDropped(type);
         }
     }
 }

@@ -14,13 +14,13 @@ namespace PvZ.Factories
             switch (type)
             {
                 case zombieType.noGearZombie:
-                    return new noGearZombie(type, false, true, 0, 50);
+                    return new noGearZombie(type, false, true, true, 0, 50);
                 case zombieType.roadConeZombie:
-                    return new roadConeZombie(type, true, true, 25, 50);
+                    return new roadConeZombie(type, true, false, true, 25, 50);
                 case zombieType.bucketHeadZombie:
-                    return new bucketHeadZombie(type, true, true, 100, 50);
+                    return new bucketHeadZombie(type, true, false, true, 100, 50);
                 case zombieType.doorZombie:
-                    return new doorZombie(type, true, true, 25, 50);
+                    return new doorZombie(type, true, true, true, 25, 50);
                 default:
                     throw new ArgumentException();
             }

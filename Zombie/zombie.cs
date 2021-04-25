@@ -10,24 +10,42 @@ namespace PvZ.Zombie
 {
     public abstract class zombie
     {
-        public static int DMG = 25;
+        public static int DMG;
+        public static int AIRDMG;
+        public static bool deadState = false;
 
-        public static void IsHit(zombieType type)
+        public static void IsHit(zombieType type, bool airDrop)
         {
             switch(type)
             {
                 case zombieType.noGearZombie:
-                    noGearZombie.zombieIsHit();
+                    noGearZombie.zombieIsHit(airDrop);
                     break;
                 case zombieType.roadConeZombie:
-                    roadConeZombie.zombieIsHit();
+                    roadConeZombie.zombieIsHit(airDrop);
                     break;
                 case zombieType.doorZombie:
-                    doorZombie.zombieIsHit();
+                    doorZombie.zombieIsHit(airDrop);
                     break;
                 case zombieType.bucketHeadZombie:
-                    bucketHeadZombie.zombieIsHit();
+                    bucketHeadZombie.zombieIsHit(airDrop);
                     break;
+            }
+        }
+        public static string InitShow(zombieType type)
+        {
+            switch (type)
+            {
+                case zombieType.noGearZombie:
+                    return "SHTR         " + 0 + "/" + 50;
+                case zombieType.roadConeZombie:
+                    return "SHTR         " + 25 + "/" + 50;
+                case zombieType.doorZombie:
+                    return "SHTR         " + 25 + "/" + 50;
+                case zombieType.bucketHeadZombie:
+                    return "SHTR         " + 100 + "/" + 50;
+                default:
+                    throw new ArgumentException();
             }
         }
         public static bool zombieState(zombieType type)
@@ -64,9 +82,11 @@ namespace PvZ.Zombie
                     break;
             }
             Console.Clear();
-            Console.Write("Zombie is dead");
+            Console.WriteLine("Zombie is dead");
+            Console.WriteLine("Press Enter to continue");
+            deadState = true;
         }
-        /*public static void isDropped(zombieType type)
+        public static void isDropped(zombieType type)
         {
             switch (type)
             {
@@ -83,6 +103,6 @@ namespace PvZ.Zombie
                     bucketHeadZombie.hasHat = false;
                     break;
             }
-        }*/
+        }
     } 
 }

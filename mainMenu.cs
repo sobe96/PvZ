@@ -51,11 +51,15 @@ namespace PvZ
                 ConsoleKeyInfo keyInfoConf = Console.ReadKey();
                 if (keyInfoConf.Key == ConsoleKey.Enter)
                 {
-                    Program.inGame = true;
+                    
                     Console.Clear();
-                    Console.WriteLine("Enter damage value");
+                    Console.WriteLine("Enter peashooter damage value");
                     zombie.DMG = Convert.ToInt32(Console.ReadLine());
-                    Program.hitNext(0);
+                    Console.Clear();
+                    Console.WriteLine("Enter watermelon damage value");
+                    zombie.AIRDMG = Convert.ToInt32(Console.ReadLine());
+                    Program.inGame = true;
+                    //Program.hitNext(0, false);
                     Program.Main();
                 }
                 if (keyInfoConf.Key == ConsoleKey.Backspace)

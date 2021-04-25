@@ -11,3 +11,16 @@ F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.csproj.CoreCompileInputs.cache
 F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.dll
 F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.pdb
 F:\C# codes\PvZ\obj\Debug\netcoreapp3.1\PvZ.genruntimeconfig.cache
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\bin\Debug\netcoreapp3.1\PvZ.exe
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\bin\Debug\netcoreapp3.1\PvZ.deps.json
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\bin\Debug\netcoreapp3.1\PvZ.runtimeconfig.json
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\bin\Debug\netcoreapp3.1\PvZ.runtimeconfig.dev.json
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\bin\Debug\netcoreapp3.1\PvZ.dll
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\bin\Debug\netcoreapp3.1\PvZ.pdb
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.csprojAssemblyReference.cache
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.AssemblyInfoInputs.cache
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.AssemblyInfo.cs
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.csproj.CoreCompileInputs.cache
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.dll
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.pdb
+C:\Users\same1\Desktop\My WSU studies\Software Design and Architecture\Projects\Midterm\PvZ\obj\Debug\netcoreapp3.1\PvZ.genruntimeconfig.cache

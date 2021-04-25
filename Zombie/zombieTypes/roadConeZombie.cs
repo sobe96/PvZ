@@ -8,58 +8,125 @@ namespace PvZ.Zombie.zombieTypes
     class roadConeZombie : zombie
     {
         public static bool hasHat;
+        public static bool emptyHead;
         public static bool isAlive;
         private static int hatHP;
         public static zombieType typeZ;
         public static int ZomConeHP;
 
-        public roadConeZombie(zombieType type, bool h, bool a, int hhp, int zhp)
+        public roadConeZombie(zombieType type, bool h, bool e, bool a, int hhp, int zhp)
         {
             typeZ = type;
             hatHP = hhp;
             hasHat = h;
             isAlive = a;
             ZomConeHP = zhp;
+            emptyHead = e;
         }
-        public static void zombieIsHit()
+        public static void zombieIsHit(bool airDrop)
         {
-            if (hasHat)
+            if (airDrop)
             {
-                if (hatHP > 0)
+                if (emptyHead)
                 {
-                    Console.Clear();
-                    Console.Write("SHTR         " + hatHP + "/" + ZomConeHP);
-                    //Overkill hat damage. Can be commented to disable overkill feature
-                    int dif = hatHP - DMG;
-                    if (dif < 0)
+                    ZomConeHP -= AIRDMG;
+                    if (ZomConeHP > 0)
                     {
-                        hatHP = 0;
-                        ZomConeHP += dif;
+                        Console.Clear();
+                        Console.Write("SHTR         " + hatHP + "/" + ZomConeHP);
                     }
-                    // End of overkill feature
-                    hatHP -= DMG;
+                    else
+                    {
+                        isDead(PvZ.Configs.zombieType.roadConeZombie);
+                    }
                 }
                 else
                 {
-                    hasHat = false;
-                    Console.Clear();
-                    Console.Write("SHTR         " + "0/" + ZomConeHP);
-                    ZomConeHP -= DMG;
+                    if (hasHat)
+                    {
+                        if (hatHP > 0)
+                        {
+                            //Overkill hat damage. Can be commented to disable overkill feature
+                            int dif = hatHP - AIRDMG;
+                            if (dif < 0)
+                            {
+                                hatHP = 0;
+                                ZomConeHP += dif;
+                            }
+                            else
+                            {
+                                hatHP -= AIRDMG;
+                            }
+                            // End of overkill feature
+                            
+                            Console.Clear();
+                            Console.Write("SHTR         " + hatHP + "/" + ZomConeHP);
+                        }
+                        else
+                        {
+                            hasHat = false;
+                            ZomConeHP -= AIRDMG;
+                            Console.Clear();
+                            Console.Write("SHTR         " + "0/" + ZomConeHP);
+                        }
+                    }
+                    else
+                    {
+                        if (ZomConeHP > 0)
+                        {
+
+                            ZomConeHP -= AIRDMG;
+                            Console.Clear();
+                            Console.Write("SHTR         " + "0/" + ZomConeHP);
+                        }
+                        else
+                        {
+                            isDead(PvZ.Configs.zombieType.roadConeZombie);
+                        }
+                    }
                 }
             }
             else
             {
-                if (ZomConeHP > 0)
+                if (hasHat)
                 {
-                    Console.Clear();
-                    Console.Write("SHTR         " + "0/" + ZomConeHP);
-                    ZomConeHP -= DMG;
+                    if (hatHP > 0)
+                    {
+                        //Overkill hat damage. Can be commented to disable overkill feature
+                        int dif = hatHP - DMG;
+                        if (dif < 0)
+                        {
+                            hatHP = 0;
+                            ZomConeHP += dif;
+                        }
+                        // End of overkill feature
+                        hatHP -= DMG;
+                        Console.Clear();
+                        Console.Write("SHTR         " + hatHP + "/" + ZomConeHP);
+                    }
+                    else
+                    {
+                        hasHat = false;
+                        ZomConeHP -= DMG;
+                        Console.Clear();
+                        Console.Write("SHTR         " + "0/" + ZomConeHP);
+                    }
                 }
                 else
                 {
-                    isDead(PvZ.Configs.zombieType.roadConeZombie);
+                    if (ZomConeHP > 0)
+                    {
+                        ZomConeHP -= DMG;
+                        Console.Clear();
+                        Console.Write("SHTR         " + "0/" + ZomConeHP);
+                    }
+                    else
+                    {
+                        isDead(PvZ.Configs.zombieType.roadConeZombie);
+                    }
                 }
             }
+            
         }
     }
 }
