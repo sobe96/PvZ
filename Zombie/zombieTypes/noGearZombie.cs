@@ -13,6 +13,7 @@ namespace PvZ.Zombie.zombieTypes
         public static int hatHP;
         public static zombieType typeZ;
         public static int ZomRegHP;
+        public static bool isMetal = false;
 
         public noGearZombie(zombieType type, bool h, bool e, bool a, int hhp, int zhp)
         {
@@ -68,10 +69,9 @@ namespace PvZ.Zombie.zombieTypes
                     }
                     else
                     {
+                        ZomRegHP -= AIRDMG;
                         if (ZomRegHP > 0)
                         {
-
-                            ZomRegHP -= AIRDMG;
                             Console.Clear();
                             Console.Write("SHTR         " + "0/" + ZomRegHP);
                         }
@@ -110,9 +110,9 @@ namespace PvZ.Zombie.zombieTypes
                 }
                 else
                 {
+                    ZomRegHP -= DMG;
                     if (ZomRegHP > 0)
                     {
-                        ZomRegHP -= DMG;
                         Console.Clear();
                         Console.Write("SHTR         " + "0/" + ZomRegHP);
                     }

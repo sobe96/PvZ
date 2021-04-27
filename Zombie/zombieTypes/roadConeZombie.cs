@@ -10,9 +10,10 @@ namespace PvZ.Zombie.zombieTypes
         public static bool hasHat;
         public static bool emptyHead;
         public static bool isAlive;
-        private static int hatHP;
+        public static int hatHP;
         public static zombieType typeZ;
         public static int ZomConeHP;
+        public static bool isMetal = false;
 
         public roadConeZombie(zombieType type, bool h, bool e, bool a, int hhp, int zhp)
         {
@@ -72,10 +73,9 @@ namespace PvZ.Zombie.zombieTypes
                     }
                     else
                     {
+                        ZomConeHP -= AIRDMG;
                         if (ZomConeHP > 0)
                         {
-
-                            ZomConeHP -= AIRDMG;
                             Console.Clear();
                             Console.Write("SHTR         " + "0/" + ZomConeHP);
                         }
@@ -114,9 +114,9 @@ namespace PvZ.Zombie.zombieTypes
                 }
                 else
                 {
+                    ZomConeHP -= DMG;
                     if (ZomConeHP > 0)
                     {
-                        ZomConeHP -= DMG;
                         Console.Clear();
                         Console.Write("SHTR         " + "0/" + ZomConeHP);
                     }

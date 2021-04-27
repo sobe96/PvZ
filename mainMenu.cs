@@ -15,13 +15,13 @@ namespace PvZ
             Console.Write("1. Add a zombie\n" +
                 "2. Start\n\n" +
                 "List of Zombies\n");
-            if (Program.zombieList.Count == 0)
+            if (GameObjectManager.zombieList.Count == 0)
             {
                 Console.WriteLine("There are no zombies yet");
             }
             else
             {
-                foreach (var zom in Program.zombieList)
+                foreach (var zom in GameObjectManager.zombieList)
                 {
                     var type = Program.GetZombieType(zom);
                     string niceType = Program.prettyName(type);

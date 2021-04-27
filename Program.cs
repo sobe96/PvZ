@@ -10,10 +10,10 @@ namespace PvZ
 {
     public sealed class Program
     {
-        public static List<zombie> zombieList = new List<zombie>();
+        //public static List<zombie> zombieList = new List<zombie>();
         public static zombieFactory factory = new zombieFactory();
         public static bool inGame = false;
-        public static int i;
+        public static int i = 0;
         public static bool gameStart = true;
 
         public static void addZombie(zombieType type)
@@ -22,19 +22,19 @@ namespace PvZ
             {
                 case zombieType.noGearZombie:
                     var newZom = factory.GetZombie(zombieType.noGearZombie);
-                    zombieList.Add(newZom);
+                    GameObjectManager.zombieList.Add(newZom);
                     break;
                 case zombieType.roadConeZombie:
                     var newRZom = factory.GetZombie(zombieType.roadConeZombie);
-                    zombieList.Add(newRZom);
+                    GameObjectManager.zombieList.Add(newRZom);
                     break;
                 case zombieType.bucketHeadZombie:
                     var newBZom = factory.GetZombie(zombieType.bucketHeadZombie);
-                    zombieList.Add(newBZom);
+                    GameObjectManager.zombieList.Add(newBZom);
                     break;
                 case zombieType.doorZombie:
                     var newDZom = factory.GetZombie(zombieType.doorZombie);
-                    zombieList.Add(newDZom);
+                    GameObjectManager.zombieList.Add(newDZom);
                     break;
             }
         }
@@ -54,7 +54,20 @@ namespace PvZ
                     ConsoleKeyInfo keyInfoEnter = Console.ReadKey();
                     if (keyInfoEnter.Key == ConsoleKey.Enter)
                     {
-                        zombie.deadState = false;
+                        if (i >= GameObjectManager.zombieList.Count)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            zombie.deadState = false;
+                            var type = GetZombieType(i);
+                            Console.Clear();
+                            Console.Write(zombie.InitShow(type));
+                        }
+                        
                     }
                 }
                 else
@@ -62,7 +75,7 @@ namespace PvZ
                     ConsoleKeyInfo keyInfoConf = Console.ReadKey();
                     if (keyInfoConf.Key == ConsoleKey.D1)
                     {
-                        bool airDrop = false;
+                        /*bool airDrop = false;
                         if (i >= zombieList.Count)
                         {
                             Console.Clear();
@@ -76,11 +89,12 @@ namespace PvZ
                             {
                                 i++;
                             }
-                        }
+                        }*/
+                        i = GameEventManager.PeaShooter(i);
                     }
                     if (keyInfoConf.Key == ConsoleKey.D2)
                     {
-                        bool airDrop = true;
+                        /*bool airDrop = true;
                         if (i >= zombieList.Count)
                         {
                             Console.Clear();
@@ -94,11 +108,12 @@ namespace PvZ
                             {
                                 i++;
                             }
-                        }
+                        }*/
+                        i = GameEventManager.WaterMelon(i);
                     }
                     if (keyInfoConf.Key == ConsoleKey.D3)
                     {
-                        if (i >= zombieList.Count)
+                        /*if (i >= zombieList.Count)
                         {
                             Console.Clear();
                             Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
@@ -106,8 +121,12 @@ namespace PvZ
                         }
                         else
                         {
+                            var type = GetZombieType(i);
                             loseHatNext(i);
-                        }
+                            Console.Clear();
+                            Console.Write(zombie.InitShow(type));
+                        }*/
+                        i = GameEventManager.MagnetShroom(i);
                     }
                 }
             }
@@ -146,7 +165,7 @@ namespace PvZ
         }
         public static zombieType GetZombieType(int k)
         {
-              switch (zombieList[k])
+              switch (GameObjectManager.zombieList[k])
             {
                 case noGearZombie:
                     return zombieType.noGearZombie;

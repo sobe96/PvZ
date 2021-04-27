@@ -13,6 +13,7 @@ namespace PvZ.Zombie
         public static int DMG;
         public static int AIRDMG;
         public static bool deadState = false;
+        public static bool isMetal;
 
         public static void IsHit(zombieType type, bool airDrop)
         {
@@ -37,13 +38,41 @@ namespace PvZ.Zombie
             switch (type)
             {
                 case zombieType.noGearZombie:
-                    return "SHTR         " + 0 + "/" + 50;
+                    if (noGearZombie.hasHat)
+                    {
+                        return "SHTR         " + noGearZombie.hatHP + "/" + noGearZombie.ZomRegHP;
+                    }
+                    else
+                    {
+                        return "SHTR         " + 0 + "/" + noGearZombie.ZomRegHP;
+                    }
                 case zombieType.roadConeZombie:
-                    return "SHTR         " + 25 + "/" + 50;
+                    if (roadConeZombie.hasHat)
+                    {
+                        return "SHTR         " + roadConeZombie.hatHP + "/" + roadConeZombie.ZomConeHP;
+                    }
+                    else
+                    {
+                        return "SHTR         " + 0 + "/" + roadConeZombie.ZomConeHP;
+                    }
                 case zombieType.doorZombie:
-                    return "SHTR         " + 25 + "/" + 50;
+                    if (doorZombie.hasHat)
+                    {
+                        return "SHTR         " + doorZombie.hatHP + "/" + doorZombie.ZomDoorHP;
+                    }
+                    else
+                    {
+                        return "SHTR         " + 0 + "/" + doorZombie.ZomDoorHP;
+                    }
                 case zombieType.bucketHeadZombie:
-                    return "SHTR         " + 100 + "/" + 50;
+                    if (bucketHeadZombie.hasHat)
+                    {
+                        return "SHTR         " + bucketHeadZombie.hatHP + "/" + bucketHeadZombie.ZomBuckHP;
+                    }
+                    else
+                    {
+                        return "SHTR         " + 0 + "/" + bucketHeadZombie.ZomBuckHP;
+                    }
                 default:
                     throw new ArgumentException();
             }
@@ -92,15 +121,19 @@ namespace PvZ.Zombie
             {
                 case zombieType.noGearZombie:
                     noGearZombie.hasHat = false;
+                    noGearZombie.hatHP = 0;
                     break;
                 case zombieType.roadConeZombie:
                     roadConeZombie.hasHat = false;
+                    roadConeZombie.hatHP = 0;
                     break;
                 case zombieType.doorZombie:
                     doorZombie.hasHat = false;
+                    doorZombie.hatHP = 0;
                     break;
                 case zombieType.bucketHeadZombie:
                     bucketHeadZombie.hasHat = false;
+                    bucketHeadZombie.hatHP = 0;
                     break;
             }
         }

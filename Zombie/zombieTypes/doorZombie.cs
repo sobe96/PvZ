@@ -10,9 +10,10 @@ namespace PvZ.Zombie.zombieTypes
         public static bool hasHat;
         public static bool emptyHead;
         public static bool isAlive;
-        private static int hatHP;
+        public static int hatHP;
         public static zombieType typeZ;
         public static int ZomDoorHP;
+        public static bool isMetal = true;
 
         public doorZombie(zombieType type, bool h, bool e, bool a, int hhp, int zhp)
         {
@@ -68,10 +69,9 @@ namespace PvZ.Zombie.zombieTypes
                     }
                     else
                     {
+                        ZomDoorHP -= AIRDMG;
                         if (ZomDoorHP > 0)
                         {
-
-                            ZomDoorHP -= AIRDMG;
                             Console.Clear();
                             Console.Write("SHTR         " + "0/" + ZomDoorHP);
                         }
@@ -110,9 +110,9 @@ namespace PvZ.Zombie.zombieTypes
                 }
                 else
                 {
+                    ZomDoorHP -= DMG;
                     if (ZomDoorHP > 0)
                     {
-                        ZomDoorHP -= DMG;
                         Console.Clear();
                         Console.Write("SHTR         " + "0/" + ZomDoorHP);
                     }
