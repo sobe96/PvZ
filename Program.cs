@@ -10,7 +10,6 @@ namespace PvZ
 {
     public sealed class Program
     {
-        //public static List<zombie> zombieList = new List<zombie>();
         public static zombieFactory factory = new zombieFactory();
         public static bool inGame = false;
         public static int i = 0;
@@ -75,57 +74,14 @@ namespace PvZ
                     ConsoleKeyInfo keyInfoConf = Console.ReadKey();
                     if (keyInfoConf.Key == ConsoleKey.D1)
                     {
-                        /*bool airDrop = false;
-                        if (i >= zombieList.Count)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
-                            Console.ReadLine();
-                        }
-                        else
-                        {
-                            hitNext(i, airDrop);
-                            if (!IsAlive(i))
-                            {
-                                i++;
-                            }
-                        }*/
                         i = GameEventManager.PeaShooter(i);
                     }
                     if (keyInfoConf.Key == ConsoleKey.D2)
                     {
-                        /*bool airDrop = true;
-                        if (i >= zombieList.Count)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
-                            Console.ReadLine();
-                        }
-                        else
-                        {
-                            hitNext(i, airDrop);
-                            if (!IsAlive(i))
-                            {
-                                i++;
-                            }
-                        }*/
                         i = GameEventManager.WaterMelon(i);
                     }
                     if (keyInfoConf.Key == ConsoleKey.D3)
                     {
-                        /*if (i >= zombieList.Count)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("All Zombies are dead! Your brains are safe... for now.");
-                            Console.ReadLine();
-                        }
-                        else
-                        {
-                            var type = GetZombieType(i);
-                            loseHatNext(i);
-                            Console.Clear();
-                            Console.Write(zombie.InitShow(type));
-                        }*/
                         i = GameEventManager.MagnetShroom(i);
                     }
                 }
